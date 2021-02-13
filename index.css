@@ -127,8 +127,12 @@ button.change_btn {
 
     text-align: center;
     position: absolute;
-    bottom: 30px;
-    left: 0;
     right: 0;
+    left: 0;
+    bottom: 30px;
     margin: auto;
+}
+.author a{
+    color: rgb(146, 126, 165);
+    text-decoration: none;
 }
