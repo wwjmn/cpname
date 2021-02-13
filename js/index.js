@@ -9,10 +9,8 @@ var intro_p2 = document.getElementsByClassName('intro2')[0];
 var intro_p3 = document.getElementsByClassName('intro3')[0];
 var intro_p4 = document.getElementsByClassName('intro4')[0];
 
-
 var ciyuOption = document.getElementsByName("style")[0];
 var chengyuOption = document.getElementsByName("style")[1];
-
 var nameDic = ciyuDicFinal; // 默认词典
 
 //复选框成语词语二选一

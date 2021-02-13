@@ -10,6 +10,8 @@ provides: [Pinyin]
 */
 //(function( window, undefined ){
 // var Pinyin = new Class({
+
+
 var pinyin = (function (){
   var Pinyin = function (ops){
     this.initialize(ops);
