@@ -86,7 +86,7 @@ sure_btn.onclick = function () {
 
     cpNameArray.push('over');
     print(cpNameArray);
-    
+
     // 点击换一换，换个cp名
     var i = 1;
     change_btn.onclick = function () {
@@ -150,6 +150,9 @@ var cpNames = function (name1Inputvalue, name2Inputvalue) {
     var str = []; // 每一个符合条件的属性名
     for (var i = 0; i < len1; i++) {
         for (var j = 0; j < len2; j++) {
+            if (!nameDic[name1PinYin[i]] || !nameDic[name2PinYin[j]]) {
+                continue; // 因为有的拼音可能还没录入字典里
+            }
             if (name1PinYin[i] == name2PinYin[j]) { // 如果两个字同音，那么cp名也得至少两个音相同
                 str = doubleYin(nameDic[name1PinYin[i]], name1PinYin[i]);
 
@@ -159,26 +162,25 @@ var cpNames = function (name1Inputvalue, name2Inputvalue) {
                 continue;
             }
 
-            if (!nameDic[name1PinYin[i]] || !nameDic[name2PinYin[j]]) {
-                continue; // 因为有的拼音可能还没录入字典里
-            } else {
-                str = arrayIntersection(nameDic[name1PinYin[i]], nameDic[name2PinYin[j]]);
-                // console.log(str);
-                if (str == []) {
-                    continue;
-                } else {
-                    for (var h = 0; h < str.length; h++) {
-                        strArray.push(str[h]);
-                    }
-                }
+
+            str = arrayIntersection(nameDic[name1PinYin[i]], nameDic[name2PinYin[j]]);
+            // console.log(str);
+            if (str.length == 0) {
+                continue;
             }
+
+            for (var h = 0; h < str.length; h++) {
+                strArray.push(str[h]);
+            }
+
+
         }
     }
     // strArray去重
     strArray = Array.from(new Set(strArray));
     return strArray;
 }
-// arrayIntersection取两数组重合部分（有更优化对方式吗？？？？？？？）
+// arrayIntersection取两数组重合部分（有更优化的方式吗？？？？？？？）
 var arrayIntersection = function (a, b) {
     var ai = 0,
         bi = 0;
@@ -187,8 +189,6 @@ var arrayIntersection = function (a, b) {
         for (bi = 0; bi < b.length; bi++) {
             if (a[ai] == b[bi]) {
                 result.push(a[ai])
-            } else {
-                continue;
             }
         }
     }
@@ -218,7 +218,7 @@ var doubleYin = function (array, yin) {
     return doubleArray;
 }
 
-var print = function(arr){
-    var str = arr.join('" , "');
+const print = function (arr) {
+    let str = arr.join('" , "');
     console.log(str);
 }
