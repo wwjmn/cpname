@@ -127,10 +127,11 @@ button.change_btn {
     background-color: #af4f9f;
 
     text-align: center;
+    
     position: absolute;
+    bottom: 30px;
     right: 0;
     left: 0;
-    bottom: 30px;
     margin: auto;
 }
 .author a{
