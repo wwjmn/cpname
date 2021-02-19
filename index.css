@@ -122,17 +122,23 @@ button.change_btn {
     color: rgb(251, 245, 251);
 }
 
-.author{
-    width: 200px;
-    background-color: #af4f9f;
-
-    text-align: center;
-    
+.author {
+    width: 250px;  
     position: absolute;
     bottom: 30px;
     right: 0;
     left: 0;
     margin: auto;
+
+}
+.author span{
+    width: 200px;
+    background-color: #af4f9f;
+
+    text-align: center;
+}
+.author span.warehouse{
+    margin-left: 30px;
 }
 .author a{
     color: rgb(146, 126, 165);
