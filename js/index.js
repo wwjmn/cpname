@@ -156,10 +156,10 @@ sure_btn.onclick = function () {
                 }
                 // console.log(cpNameArray);
             }
-        },
-        error:function(response){
-            alert('当前人数过多，请稍后再试～');
         }
+        // error:function(response){
+        //     alert('当前人数过多，请稍后再试～');
+        // }
 
     });
 }
