@@ -2,6 +2,10 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgb(146, 126, 165);
+    /* background-color: #bc84a8; */
+    position: fixed;
+    background-image: url(texture.png);
+    /* transition: background-color 2s ease-in; */
 }
 
 h1 {
@@ -13,6 +17,10 @@ h1 {
     text-align: center;
     font-size: 50px;
     font-family: "Comic Sans MS", 'Hiragino Sans GB', sans-serif;
+}
+
+a {
+    text-decoration: none;
 }
 
 .name {
@@ -37,6 +45,7 @@ h1 {
     /*输入框中输入文字时前面的一段距离*/
     vertical-align: middle;
     /*解决输入文字时文本框移动问题*/
+    background-color: rgb(255, 255, 252);
 }
 
 button {
@@ -49,11 +58,12 @@ button {
 .style {
     width: 200px;
 
-    margin:auto;
+    margin: auto;
     margin-top: 20px;
     /* background-color: aquamarine; */
     color: ivory;
     text-align: center;
+    display: flex;
 }
 
 .style input[type="radio"] {
@@ -77,7 +87,7 @@ button {
 }
 
 .style input[type="radio"]:checked {
-    background-color: #af4f9f;
+    background-color: rgb(175, 79, 159);
     border: solid 1px #af4f9f;
     /* box-shadow: 0 1px 1px rgba(0,0,0,.1); */
     text-align: center;
@@ -99,7 +109,8 @@ button {
     /* font-size: 80px; */
     text-align: center;
     line-height: 100px;
-    background-color: rgb(200, 168, 201);
+    /* background-color: rgb(200, 168, 201); */
+    background-color: rgb(200, 165, 201);
     color: rgb(251, 245, 251);
 }
 
@@ -123,24 +134,44 @@ button.change_btn {
 }
 
 .author {
-    width: 250px;  
+    width: 250px;
     position: absolute;
-    bottom: 30px;
-    right: 0;
+    bottom: 15px;
     left: 0;
+    right: 0;
     margin: auto;
-
 }
-.author span{
+
+.author span {
     width: 200px;
     background-color: #af4f9f;
 
     text-align: center;
 }
-.author span.warehouse{
+
+.author span.warehouse {
     margin-left: 30px;
 }
-.author a{
+
+.author a {
     color: rgb(146, 126, 165);
     text-decoration: none;
+}
+
+.error {
+    display: none;
+    color: azure;
+    width: 400px;
+    height: 100px;
+    background-color: rgba(175, 79, 159, 0.7);
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%,-50%);
+    padding: 0px 10px;
+    /* position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); */
 }
