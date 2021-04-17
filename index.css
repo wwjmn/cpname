@@ -58,6 +58,8 @@ footer {
     width: 15.5rem;
     height: 3rem;
     font-size: 2rem;
+    padding: 0;
+    margin: 0;
     border: none;
     outline: none;
     outline-offset: 0;
