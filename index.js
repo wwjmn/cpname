@@ -20,12 +20,8 @@ var name2 = document.getElementById('name2').value;
 var ciyuOption = document.getElementsByName("style")[0];
 var cp_name_span = document.getElementsByClassName('cp_name')[0];
 // var tp;
-var main = document.getElementsByClassName('main')[0];
-var error = document.getElementsByClassName('error')[0];
-var errorDisplay = function(){
-    main.style.disply = 'none';
-    error.style.disply = 'block';
-}
+var main = document.getElementsByTagName('main')[0];
+
 // 清空内容
 var clearContent = function () {
     cp_name_span.innerText = '';
@@ -71,7 +67,7 @@ sure_btn.onclick = function () {
 
     $.ajax({
         type: "get",
-        url: "http://49.232.68.86/cp/cpname",
+        url: "http://49.232.68.86/cp/cpname", // 接口
         contentType: "application/x-www-form-urlencoded;charset=utf-8",
         data: {
             name1: name1,

@@ -1,47 +1,68 @@
+:root {
+    --color-1: #927ea5;
+    --color-2: #c8a5c9;
+    --color-3: #af4f9f;
+}
+
+/* 笔记： 
+css fr 单位是一个自适应单位，fr单位被用于在一系列长度值中分配剩余空间；
+rem（font size of the root element）是指相对于根元素的字体大小的单位； 
+ */
+
+/* grid布局 */
 body {
-    width: 100%;
-    height: 100%;
-    background-color: rgb(146, 126, 165);
-    /* background-color: #bc84a8; */
-    position: fixed;
-    background-image: url(texture.png);
-    /* transition: background-color 2s ease-in; */
+    display: grid;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    grid-template-rows: 10rem 1fr auto;
+    background-color: var(--color-1);
 }
 
-h1 {
-    width: 600px;
-    height: 50px;
-    margin: 0 auto;
-    margin-top: 50px;
-    color: ivory;
+header h1 {
+    margin-top: 4rem;
     text-align: center;
-    font-size: 50px;
     font-family: "Comic Sans MS", 'Hiragino Sans GB', sans-serif;
+    color: ivory;
+    font-size: 3.5rem;
 }
 
-a {
-    text-decoration: none;
+main {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+footer {
+    padding: 1rem;
+    text-align: center;
+}
+
+/* 中间main部分 */
+.up3 {
+    width: 37rem;
+    height: 16rem;
+    margin: 0 auto;
 }
 
 .name {
-    width: 600px;
-    height: 50px;
-    margin: 0 auto;
-    margin-top: 100px;
-    /* background-color: dodgerblue; */
+    height: 3rem;
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    /* 垂直居中 */
+    justify-content: space-between;
+    /* 两端对齐 */
 }
 
 .name input {
-    width: 250px;
-    height: 50px;
-    font-size: 25px;
-    /* 清除文本框样式 */
-    margin: 0;
-    padding: 0;
+    width: 15.5rem;
+    height: 3rem;
+    font-size: 2rem;
     border: none;
     outline: none;
     outline-offset: 0;
-    text-indent: 16px;
+    /* 清除文本框样式 */
+    text-indent: 1rem;
     /*输入框中输入文字时前面的一段距离*/
     vertical-align: middle;
     /*解决输入文字时文本框移动问题*/
@@ -49,18 +70,15 @@ a {
 }
 
 button {
-    width: 80px;
-    height: 50px;
-    float: right;
-    /* background-color: dimgrey; */
+    width: 5rem;
+    height: 3rem;
 }
 
+/* 风格选项 */
 .style {
-    width: 200px;
-
+    width: 12.5rem;
     margin: auto;
-    margin-top: 20px;
-    /* background-color: aquamarine; */
+    margin-top: 1rem;
     color: ivory;
     text-align: center;
     display: flex;
@@ -70,108 +88,71 @@ button {
     width: 1.2rem;
     height: 1.2rem;
     background-color: ivory;
-    border: solid 1px ivory;
-    -webkit-border-radius: 100%;
     border-radius: 100%;
-    font-size: 0.8rem;
+    -webkit-border-radius: 100%;
 
-    margin: 0 20px 0 0;
+    margin: 0 1rem 0 0;
     padding: 0;
     position: relative;
     display: inline-block;
     vertical-align: top;
     cursor: pointer;
     -webkit-appearance: none;
-    /**隐藏原生控件**/
-
+    /* 隐藏原生控件 */
 }
 
 .style input[type="radio"]:checked {
-    background-color: rgb(175, 79, 159);
-    border: solid 1px #af4f9f;
-    /* box-shadow: 0 1px 1px rgba(0,0,0,.1); */
+    background-color: var(--color-3);
     text-align: center;
-    /* background-clip: padding-box; */
 }
 
 .show {
-    width: 600px;
-    height: 100px;
+    width: 37rem;
+    height: 6rem;
     margin: auto;
     position: relative;
-    top: 20px;
+    top: 1rem;
+    display: flex;
+    align-items: center;
+    /* 垂直居中 */
+    justify-content: space-between;
+    /* 两端对齐 */
 }
 
 #cp_name {
-    float: left;
-    width: 510px;
-    height: 100px;
-    /* font-size: 80px; */
+    width: 31.75rem;
+    height: 6rem;
     text-align: center;
-    line-height: 100px;
-    /* background-color: rgb(200, 168, 201); */
-    background-color: rgb(200, 165, 201);
+    line-height: 6rem;
+    background-color: var(--color-2);
     color: rgb(251, 245, 251);
-}
-
-button.change_btn {
-    margin-top: 30px;
 }
 
 .intro {
-    width: 600px;
+    width: 37rem;
+    height: auto;
     margin: auto;
-    font-size: 20px;
     overflow: hidden;
-    /* background-color: antiquewhite; */
-    margin-top: 70px;
+    margin-top: 3rem;
+    font-size: 1.2rem;
 }
 
 .intro p {
-    /* background-color: rgb(109, 90, 64); */
-    margin: 5px 0 0 0;
-    color: rgb(251, 245, 251);
+    margin: 0.3rem 0 0 0.5rem;
+    color: #fbf5fb;
 }
 
-.author {
-    width: 250px;
-    position: absolute;
-    bottom: 15px;
-    left: 0;
-    right: 0;
-    margin: auto;
+/* 底部 */
+footer .author span.ml1 {
+    margin-left: 1rem;
 }
 
-.author span {
-    width: 200px;
-    background-color: #af4f9f;
-
-    text-align: center;
+footer .author a {
+    color: var(--color-2);
+    text-decoration: underline;
 }
 
-.author span.warehouse {
-    margin-left: 30px;
-}
-
-.author a {
-    color: rgb(146, 126, 165);
-    text-decoration: none;
-}
-
-.error {
-    display: none;
-    color: azure;
-    width: 400px;
-    height: 100px;
-    background-color: rgba(175, 79, 159, 0.7);
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    right: 50%;
-    transform: translate(-50%,-50%);
-    padding: 0px 10px;
-    /* position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%); */
+footer .author a:hover {
+    background-color: var(--color-2);
+    color: #fbf5fb;
 }
