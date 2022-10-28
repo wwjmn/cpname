@@ -67,7 +67,7 @@ sure_btn.onclick = function () {
 
     $.ajax({
         type: "get",
-        url: "http://49.232.68.86/cp/cpname", // 接口
+        url: "http://23.103.49.86/cp/cpname", // 接口（由于被很多人抄袭拿去商用了，所以这里改为虚拟地址）
         contentType: "application/x-www-form-urlencoded;charset=utf-8",
         data: {
             name1: name1,
